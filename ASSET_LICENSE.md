@@ -1,5 +1,7 @@
 # Visual asset notice
 
+[English](ASSET_LICENSE.md) | [简体中文](ASSET_LICENSE.zh-CN.md)
+
 The application icon in `assets/dsh-launcher-source.png` is an edited,
 user-supplied online meme image. The project owner represents that its Bilibili
 creator released the artwork for reuse; the same character material is also

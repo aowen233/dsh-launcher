@@ -1,5 +1,7 @@
 # Code of conduct
 
+[English](CODE_OF_CONDUCT.md) | [简体中文](CODE_OF_CONDUCT.zh-CN.md)
+
 Be respectful, constructive, and specific. Harassment, threats, discrimination,
 publishing private information, and intentionally unsafe contributions are not
 acceptable.

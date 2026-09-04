@@ -1,5 +1,7 @@
 # DSH Launcher
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 An unofficial, open-source Windows launcher for the npm global installation of
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness).
 
@@ -65,7 +67,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md). By participating, you agree to follow
 ## License and attribution
 
 DSH Launcher source code is licensed under the [MIT License](LICENSE). The
-application artwork has separate CC BY-NC-SA 4.0 terms documented in
+application artwork has a separate reuse notice documented in
 [ASSET_LICENSE.md](ASSET_LICENSE.md). DeepSeek Harness and
 the optional Whale Widget are separate projects and are not redistributed as
 launcher source code. Their notices are recorded in

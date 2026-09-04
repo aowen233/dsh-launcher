@@ -1,5 +1,7 @@
 # Compatibility
 
+[English](COMPATIBILITY.md) | [简体中文](COMPATIBILITY.zh-CN.md)
+
 ## Windows
 
 - Minimum launcher target: Windows 10 version 1809 (build 17763).

@@ -1,5 +1,7 @@
 # Architecture
 
+[English](ARCHITECTURE.md) | [简体中文](ARCHITECTURE.zh-CN.md)
+
 ## Components
 
 - `DshLauncher.Core`: platform-neutral version, port, and redaction policies.
@@ -43,6 +45,6 @@ command lines are revalidated against the npm global DSH entry point, then runs
 npm through `node.exe` and npm's JavaScript entry point. Other Node.js programs
 are not terminated.
 
-Unsigned candidate builds cannot create a public GitHub Release. Signing and
-release publication will be implemented through a protected environment after
-the open-source signing provider approves the project.
+Unsigned candidates may be published only as clearly labeled GitHub
+pre-releases. Stable release publication will use a protected environment after
+an open-source signing provider approves the project.

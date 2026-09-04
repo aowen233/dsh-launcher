@@ -12,6 +12,31 @@ if ($forbidden) {
     throw "Forbidden generated or secret-bearing files found: $($forbidden.FullName -join ', ')"
 }
 
+$requiredBilingualDocuments = @(
+    'README',
+    'ASSET_LICENSE',
+    'CHANGELOG',
+    'CODE_OF_CONDUCT',
+    'CODE_SIGNING_POLICY',
+    'CONTRIBUTING',
+    'PRIVACY',
+    'SECURITY',
+    'SUPPORT',
+    'THIRD_PARTY_NOTICES',
+    'docs\ARCHITECTURE',
+    'docs\COMPATIBILITY',
+    'docs\RELEASING',
+    'docs\REPOSITORY-SETUP',
+    'docs\THREAT-MODEL'
+)
+foreach ($document in $requiredBilingualDocuments) {
+    $english = Join-Path $root "$document.md"
+    $chinese = Join-Path $root "$document.zh-CN.md"
+    if (-not (Test-Path -LiteralPath $english) -or -not (Test-Path -LiteralPath $chinese)) {
+        throw "Required bilingual documentation pair is incomplete: $document"
+    }
+}
+
 $manifestPath = Join-Path $root 'src\DshLauncher\Resources\dependencies.json'
 $manifest = Get-Content -Raw -LiteralPath $manifestPath | ConvertFrom-Json
 foreach ($dependency in @($manifest.node.x64, $manifest.node.arm64)) {

@@ -1,5 +1,7 @@
 # Public repository setup
 
+[English](REPOSITORY-SETUP.md) | [简体中文](REPOSITORY-SETUP.zh-CN.md)
+
 Complete these steps before the first public release.
 
 ## Repository

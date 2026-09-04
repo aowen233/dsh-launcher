@@ -1,5 +1,7 @@
 # Third-party notices
 
+[English](THIRD_PARTY_NOTICES.md) | [简体中文](THIRD_PARTY_NOTICES.zh-CN.md)
+
 ## Application artwork
 
 The user-supplied application artwork and its edited icon are governed by the

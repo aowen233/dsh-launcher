@@ -1,10 +1,13 @@
 # Contributing
 
+[English](CONTRIBUTING.md) | [简体中文](CONTRIBUTING.zh-CN.md)
+
 ## Development
 
 1. Open an issue before substantial behavior or security changes.
 2. Create a focused branch and include tests for observable behavior.
-3. Run `dotnet format --verify-no-changes` and `dotnet test`.
+3. Run the formatting check, Release build, and `DshLauncher.Tests` check
+   program documented in `README.md`.
 4. Do not commit generated installers, credentials, API keys, runtime state, or
    third-party archives.
 5. Submit a pull request. At least one maintainer review is required before

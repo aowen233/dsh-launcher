@@ -1,5 +1,7 @@
 # Privacy policy
 
+[English](PRIVACY.md) | [简体中文](PRIVACY.zh-CN.md)
+
 DSH Launcher does not collect analytics, telemetry, advertising identifiers, or
 personal files.
 

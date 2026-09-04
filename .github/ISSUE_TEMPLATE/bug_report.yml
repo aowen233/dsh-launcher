@@ -1,39 +1,39 @@
-name: Bug report
-description: Report reproducible launcher behavior
+name: Bug report / Bug 报告
+description: Report reproducible launcher behavior / 报告可复现的启动器问题
 title: "[Bug]: "
 labels: [bug]
 body:
   - type: markdown
     attributes:
-      value: Do not include API keys, tokens, cookies, or unredacted logs.
+      value: Do not include API keys, tokens, cookies, or unredacted logs. / 请勿包含 API 密钥、令牌、Cookie 或未经脱敏的日志。
   - type: input
     id: version
     attributes:
-      label: DSH Launcher version
+      label: DSH Launcher version / 启动器版本
     validations:
       required: true
   - type: dropdown
     id: architecture
     attributes:
-      label: Windows architecture
+      label: Windows architecture / Windows 架构
       options: [x64, arm64]
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
-      label: What happened?
+      label: What happened? / 出现了什么问题？
     validations:
       required: true
   - type: textarea
     id: reproduce
     attributes:
-      label: Steps to reproduce
+      label: Steps to reproduce / 复现步骤
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Expected behavior
+      label: Expected behavior / 预期行为
     validations:
       required: true

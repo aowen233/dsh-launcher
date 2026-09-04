@@ -1,5 +1,7 @@
 # Support
 
+[English](SUPPORT.md) | [简体中文](SUPPORT.zh-CN.md)
+
 - Bugs and feature requests: use GitHub Issues.
 - Security vulnerabilities: use private vulnerability reporting as described
   in `SECURITY.md`.

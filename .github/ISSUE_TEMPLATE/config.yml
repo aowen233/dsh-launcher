@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Private security report
+  - name: Private security report / 私有安全报告
     url: https://github.com/aowen233/dsh-launcher/security/advisories/new
-    about: Report a vulnerability privately; never include secrets in a public issue
-  - name: Upstream DeepSeek Harness
+    about: Report a vulnerability privately; never include secrets in a public issue / 请私下报告漏洞，切勿在公开 Issue 中包含机密
+  - name: Upstream DeepSeek Harness / 上游 DeepSeek Harness
     url: https://github.com/deepseek-ai/deepseek-harness/discussions
-    about: Ask about behavior belonging to DSH itself
+    about: Ask about behavior belonging to DSH itself / 咨询 DSH 自身行为

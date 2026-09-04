@@ -1,5 +1,7 @@
 # Threat model
 
+[English](THREAT-MODEL.md) | [简体中文](THREAT-MODEL.zh-CN.md)
+
 ## Protected assets
 
 - DSH and DeepSeek credentials.

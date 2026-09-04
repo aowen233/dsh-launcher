@@ -1,5 +1,7 @@
 # Code signing policy
 
+[English](CODE_SIGNING_POLICY.md) | [简体中文](CODE_SIGNING_POLICY.zh-CN.md)
+
 Release binaries must be produced from this public repository by the release
 workflow. Maintainers do not sign locally built, manually modified, or
 unreviewed artifacts.

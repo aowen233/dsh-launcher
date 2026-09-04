@@ -1,5 +1,7 @@
 # Security policy
 
+[English](SECURITY.md) | [简体中文](SECURITY.zh-CN.md)
+
 ## Supported versions
 
 Until the first stable release, only the newest tagged prerelease is supported.
