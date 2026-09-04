@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>../../assets/dsh-launcher.ico</ApplicationIcon>
+    <AssemblyName>DshLauncher</AssemblyName>
+    <RootNamespace>DshLauncher</RootNamespace>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+    <!-- A conventional self-contained layout avoids packed/single-file loader
+         heuristics while still requiring no preinstalled .NET runtime. -->
+    <PublishSingleFile>false</PublishSingleFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../DshLauncher.Core/DshLauncher.Core.csproj" />
+    <PackageReference Include="System.Management" Version="10.0.11" />
+    <EmbeddedResource Include="Resources/launcher-status-plugin.mjs" LogicalName="DshLauncher.Resources.launcher-status-plugin.mjs" />
+    <EmbeddedResource Include="Resources/dependencies.json" LogicalName="DshLauncher.Resources.dependencies.json" />
+  </ItemGroup>
+</Project>

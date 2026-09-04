@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "node": {
+    "version": "24.20.0",
+    "x64": {
+      "url": "https://nodejs.org/download/release/v24.20.0/node-v24.20.0-x64.msi",
+      "sha256": "28b69132c35ccc033bf8f2a67cd10c9d75ef5822593363309da448f2afff2d8a"
+    },
+    "arm64": {
+      "url": "https://nodejs.org/download/release/v24.20.0/node-v24.20.0-arm64.msi",
+      "sha256": "15130c76b7a3a5f58233a3c383944ebd0da924d2fc80e50916769a4b7b9af6f8"
+    }
+  },
+  "dsh": {
+    "package": "@deepseek-ai/dsh",
+    "installSpec": "@deepseek-ai/dsh@latest"
+  },
+  "whaleWidget": {
+    "enabled": true,
+    "name": "dsh-whale-widget",
+    "version": "0.2.10",
+    "author": "MeteorNOX",
+    "repository": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget",
+    "commit": "4448c61db7d180c4c307aa3fa734db7c8507658d",
+    "dshInstallSpec": "github:MeteorNOX/DeepSeek-Balance-Whale-Widget#4448c61db7d180c4c307aa3fa734db7c8507658d"
+  }
+}

@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Authors>aowen233 and DSH Launcher contributors</Authors>
+    <Company>aowen233</Company>
+    <Product>DSH Launcher</Product>
+    <Description>Unofficial Windows launcher for the npm global DeepSeek Harness installation.</Description>
+    <Copyright>Copyright © 2026 aowen233 and DSH Launcher contributors</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <Deterministic>true</Deterministic>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+</Project>

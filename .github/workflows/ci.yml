@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Install .NET SDK
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          global-json-file: global.json
+
+      - name: Verify generated icon
+        shell: pwsh
+        run: ./scripts/generate-icon.ps1 -Verify
+
+      - name: Restore
+        run: dotnet restore DshLauncher.sln
+
+      - name: Validate repository policy
+        shell: pwsh
+        run: ./scripts/validate-repository.ps1
+
+      - name: Verify formatting
+        run: dotnet format DshLauncher.sln --no-restore --verify-no-changes
+
+      - name: Build
+        run: dotnet build DshLauncher.sln --configuration Release --no-restore
+
+      - name: Run dependency-free checks
+        run: dotnet run --project tests/DshLauncher.Tests/DshLauncher.Tests.csproj --configuration Release --no-build

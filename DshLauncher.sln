@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DshLauncher.Core", "src\DshLauncher.Core\DshLauncher.Core.csproj", "{4F970844-B568-4A09-A089-1AECE82D80B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DshLauncher", "src\DshLauncher\DshLauncher.csproj", "{33E83249-B211-4A50-9766-6EB52766745A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DshLauncher.Tests", "tests\DshLauncher.Tests\DshLauncher.Tests.csproj", "{FD888A52-E5C1-4B68-AD09-05EF47EB8D5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F970844-B568-4A09-A089-1AECE82D80B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F970844-B568-4A09-A089-1AECE82D80B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F970844-B568-4A09-A089-1AECE82D80B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F970844-B568-4A09-A089-1AECE82D80B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33E83249-B211-4A50-9766-6EB52766745A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33E83249-B211-4A50-9766-6EB52766745A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33E83249-B211-4A50-9766-6EB52766745A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33E83249-B211-4A50-9766-6EB52766745A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD888A52-E5C1-4B68-AD09-05EF47EB8D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD888A52-E5C1-4B68-AD09-05EF47EB8D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD888A52-E5C1-4B68-AD09-05EF47EB8D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD888A52-E5C1-4B68-AD09-05EF47EB8D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

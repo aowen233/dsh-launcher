@@ -1,0 +1,39 @@
+name: Bug report
+description: Report reproducible launcher behavior
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include API keys, tokens, cookies, or unredacted logs.
+  - type: input
+    id: version
+    attributes:
+      label: DSH Launcher version
+    validations:
+      required: true
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: Windows architecture
+      options: [x64, arm64]
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true

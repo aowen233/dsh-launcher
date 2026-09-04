@@ -1,0 +1,102 @@
+name: Build release candidate
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version without a leading v
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        rid: [win-x64, win-arm64]
+    runs-on: windows-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Install .NET SDK
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68
+        with:
+          global-json-file: global.json
+
+      - name: Verify generated icon
+        shell: pwsh
+        run: ./scripts/generate-icon.ps1 -Verify
+
+      - name: Validate requested version
+        shell: pwsh
+        run: |
+          if ('${{ inputs.version }}' -notmatch '^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$') {
+            throw 'Version must be a semantic version without a leading v.'
+          }
+
+      - name: Validate repository policy
+        shell: pwsh
+        run: ./scripts/validate-repository.ps1
+
+      - name: Restore and test
+        run: |
+          dotnet restore DshLauncher.sln
+          dotnet build DshLauncher.sln --configuration Release --no-restore
+          dotnet run --project tests/DshLauncher.Tests/DshLauncher.Tests.csproj --configuration Release --no-build
+
+      - name: Publish self-contained launcher
+        run: >-
+          dotnet publish src/DshLauncher/DshLauncher.csproj
+          --configuration Release
+          --runtime ${{ matrix.rid }}
+          --self-contained true
+          --output artifacts/publish/${{ matrix.rid }}
+          -p:Version=${{ inputs.version }}
+          -p:DebugType=None
+          -p:DebugSymbols=false
+
+      - name: Install pinned Inno Setup compiler
+        shell: pwsh
+        run: choco install innosetup --version=6.7.1 --yes --no-progress
+
+      - name: Build per-user installer
+        shell: pwsh
+        run: >-
+          & 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
+          "/DAppVersion=${{ inputs.version }}"
+          "/DRuntimeIdentifier=${{ matrix.rid }}"
+          installer/DshLauncher.iss
+
+      - name: Create checksums
+        shell: pwsh
+        run: |
+          $files = Get-ChildItem artifacts/installer -File
+          $lines = foreach ($file in $files) {
+            $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash.ToLowerInvariant()
+            "$hash  $($file.Name)"
+          }
+          $lines | Set-Content "artifacts/installer/SHA256SUMS-${{ matrix.rid }}.txt" -Encoding utf8NoBOM
+
+      - name: Generate GitHub build provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-path: artifacts/installer/*
+
+      - name: Upload unsigned candidate
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: DSH-Launcher-${{ inputs.version }}-${{ matrix.rid }}-unsigned-preview
+          path: artifacts/installer/*
+          if-no-files-found: error
+          retention-days: 14
+
+# Public GitHub Releases are intentionally not created by this workflow.
+# A separate protected workflow will be added after an Authenticode provider is
+# approved. This prevents an unsigned preview from being mistaken for a stable
+# public release.
