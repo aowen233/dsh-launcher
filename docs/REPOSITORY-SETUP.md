@@ -7,11 +7,10 @@ Complete these steps before the first public release.
 1. Create a public repository named `dsh-launcher`.
 2. Push this source tree without `bin`, `obj`, `artifacts`, installers, runtime
    state, or credentials.
-3. Replace the generic GitHub URLs in `installer/DshLauncher.iss` with the final
-   repository URLs.
+3. Confirm the repository URLs in `installer/DshLauncher.iss` before each
+   release.
 4. Enable Issues and private vulnerability reporting.
-5. Add the private advisory URL to `.github/ISSUE_TEMPLATE/config.yml`.
-6. Confirm that the public account or organization grants `aowen233` the owner,
+5. Confirm that the public account or organization grants `aowen233` the owner,
    maintainer, reviewer, and signing-approver roles documented in
    `CODE_SIGNING_POLICY.md`.
 

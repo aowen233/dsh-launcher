@@ -20,8 +20,9 @@ required.
   immutable commit SHAs.
 - The candidate workflow creates SHA-256 checksums and build provenance but is
   not permitted to publish a stable GitHub Release.
-- Public releases must be built from a protected tag and Authenticode-signed
-  after compilation and before publication.
+- Public unsigned test builds must be marked as prereleases and named
+  `unsigned-preview`. Stable releases must be built from a protected tag and
+  Authenticode-signed after compilation and before publication.
 - Release workflows never run untrusted pull-request code with signing secrets.
 - Downloaded Node.js packages must match an approved SHA-256 manifest digest.
   Optional plugins must be pinned to an approved immutable upstream commit.

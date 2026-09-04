@@ -6,6 +6,8 @@ All notable changes will be documented in this file. The format follows
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-09-04
+
 ### Added
 
 - Native Windows launcher repository and security documentation.
@@ -16,3 +18,9 @@ All notable changes will be documented in this file. The format follows
 - Reproducible unsigned-candidate workflow with checksums and GitHub provenance.
 - Native task-dialog UI and per-monitor V2 high-DPI scaling.
 - Simplified Chinese installer translation pinned with its MIT license.
+
+### Fixed
+
+- Recover an already-managed global DSH server without starting a duplicate.
+- Exit the primary launcher cleanly after a stop command.
+- Avoid repeated npm global-root discovery during normal startup.
